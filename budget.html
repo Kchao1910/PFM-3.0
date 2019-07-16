@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+  <title>SaveYourMoney</title>
+</head>
+<body>
+  <header>
+    <div class="logo"><a href="index.html">SaveYourMoney</a></div>
+    <nav>
+      <ul>
+        <li><a href="budget.html">Budgeting</a></li>
+        <li><a href="portfolio.html">Portfolio<br/>Simulation</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h1>Budgeting</h1>
+
+    <section id="budget-instructions">
+      <p>Choose a name for your budget</p>
+      <input type="text" name="budget-name" id="budget-name" placeholder="Rennovations"> 
+      <p>Click the plus button to add a category to your budget.</p>
+      <button class="budget-plus-button" onclick="addCategoryToBudget()"><i class="fas fa-plus-circle"></i></button>
+    </section>
+
+    <section id="budget-category-wrapper"></section>
+
+    <button id="budget-submit-button" class="submit-button" onclick="getInputCollections()">Submit</button>
+
+    <section id="budget-summary"></section>
+
+    <section id="chart-wrapper"><canvas id="budget-allocation-chart"></canvas></section>
+
+    <span>Enter in the name you want to call your file(don't include .csv)</span>
+    <input type="text">
+    <button class="submit-button">Submit</button>
+
+  </main>
+  
+  <footer></footer>
+  <script src="node_modules/chart.js/dist/Chart.min.js"></script>
+  <script src="calculateBudget.js"></script>
+  <script src="createBudget.js"></script>
+  <script src="https://kit.fontawesome.com/e3488cdef9.js"></script> 
+</body>
+</html>

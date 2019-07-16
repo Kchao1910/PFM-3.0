@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+  <title>SaveYourMoney</title>
+</head>
+<body>
+  <header>
+    <div class="logo"><a href="index.html">SaveYourMoney</a></div>
+    <nav>
+      <ul>
+        <li><a href="budget.html">Budgeting</a></li>
+        <li><a href="portfolio.html">Portfolio<br/>Simulation</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h1>Portfolio Simulation</h1>
+
+    <section id="asset-instructions">
+      <p>Choose an asset to add to your portfolio.</p>
+      <section>
+        <button class="submit-button" onclick="addAsset('Cash')">Cash</button>
+        <button class="submit-button" onclick="addAsset('Bonds')">Bonds</button>
+        <button class="submit-button" onclick="addAsset('Equities')">Equities</button>
+        <button class="submit-button" onclick="addAsset('Property')">Property</button>
+        <button class="submit-button" onclick="addAsset('Commodities')">Commodities</button>
+        <button class="submit-button" onclick="addAsset('Antiques')">Antiques</button>
+      </section>
+    </section>
+
+    <h2>Assets</h2>
+
+    <section id="asset-wrapper"></section>
+
+    <button id="asset-submit-button" class="submit-button" disabled="disabled" onclick="getAssetInput()">Submit</button>
+
+    <section id="asset-summary"></section>
+
+    <section id="chart-wrapper"><canvas id="asset-allocation-chart"></canvas></section>
+
+  </main>
+  
+  <footer></footer>
+  <script src="createAsset.js"></script>
+  <script src="calculateReturn.js"></script>
+  <script src="calculateBudget.js"></script>
+  <script src="node_modules/chart.js/dist/Chart.min.js"></script>
+  <script src="https://kit.fontawesome.com/e3488cdef9.js"></script> 
+</body>
+</html>

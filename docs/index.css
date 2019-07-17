@@ -195,7 +195,7 @@ p {
 }
 
 @media screen and (max-width: 579px) {
-  #budget-category-wrapper, #asset-wrapper {
+  .tool-wrapper {
     grid-template-columns: 1fr;
   }
 
@@ -209,19 +209,19 @@ p {
 }
 
 @media screen and (min-width: 579px) and (max-width: 845px) {
-  #budget-category-wrapper, #asset-wrapper {
+  .tool-wrapper {
     grid-template-columns: 1fr 1fr;
   }
 }
 
 @media screen and (min-width: 845px) and (max-width: 1120px) {
-  #budget-category-wrapper, #asset-wrapper {
+  .tool-wrapper {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
 @media screen and (min-width: 1120px) {
-  #budget-category-wrapper, #asset-wrapper {
+  .tool-wrapper {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }

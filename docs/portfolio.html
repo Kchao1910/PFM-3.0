@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Simulate a portfolio of assets">
   <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/SaveYourMoney/index.css">
   <title>SaveYourMoney</title>
@@ -21,7 +22,7 @@
   <main>
     <h1>Portfolio Simulation</h1>
 
-    <section id="asset-instructions">
+    <section id="asset-instructions" class="instruction-wrapper">
       <p>Choose an asset to add to your portfolio.</p>
       <section>
         <button class="submit-button" onclick="addAsset('Cash')">Cash</button>
@@ -35,7 +36,7 @@
 
     <h2>Assets</h2>
 
-    <section id="asset-wrapper"></section>
+    <section id="asset-wrapper" class="tool-wrapper"></section>
 
     <button id="asset-submit-button" class="submit-button" disabled="disabled" onclick="getAssetInput()">Submit</button>
 

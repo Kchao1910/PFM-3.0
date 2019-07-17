@@ -10,17 +10,12 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
-#budget-category-wrapper, #asset-wrapper {
+.tool-wrapper {
   display: grid;
 }
 
-.budget-form, .asset-form {
-  display: flex;
-  flex-direction: column;
-  margin: 1.2rem;
-}
 
-#budget-instructions, #asset-instructions {
+.instruction-wrapper {
   align-items: center;
   display: grid;
 }
@@ -30,7 +25,7 @@ body {
   font-size: 18px;
 }
 
-#budget-name, #csv-name {
+.instruction-wrapper input {
   justify-self: center;
   width: 10rem;
 }
@@ -55,9 +50,12 @@ form {
   border: 1.5px solid black;
   border-radius: 8px;
   padding: 40px;
+  display: flex;
+  flex-direction: column;
+  margin: 1.2rem;
 }
 
-form input, input, .asset-name-label {
+input, .asset-name-label {
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
   margin-bottom: 8px;
@@ -73,10 +71,6 @@ li {
 
 .logo {
   font-size: 28px;
-}
-
-input {
-  font-size: 16px;
 }
 
 nav ul li a {

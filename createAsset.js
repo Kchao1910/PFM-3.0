@@ -1,7 +1,7 @@
 const assetWrapper = document.querySelector("#asset-wrapper");
 const assetSubmitButton = document.querySelector("#asset-submit-button");
 
-disableSubmitButton();
+disableSubmitButton(assetWrapper, assetSubmitButton);
 
 function addAsset(assetName) {
   if (checkAssetExists(assetName) === true) {
@@ -35,7 +35,7 @@ function addAsset(assetName) {
   removeAssetButtonWrapper.setAttribute("class", "remove-element-wrapper");
   removeAssetButtonWrapper.addEventListener("click", function(event) { 
     event.preventDefault();
-    removeAsset(assetNameCounterResult); 
+    removeNode(assetNameCounterResult, assetWrapper, assetSubmitButton); 
   });
   removeAssetIcon.setAttribute("class", "far fa-times-circle");
 
@@ -55,29 +55,29 @@ function addAsset(assetName) {
 
   assetWrapper.appendChild(docFragment);
 
-  enableSubmitButton();
+  enableSubmitButton(assetSubmitButton);
 }
 
 function assetNameCounter(assetName) {
   return `asset-${assetName}`;
 }
 
-function removeAsset(child) {
+function removeNode(child, wrapper, button) {
   const childElement = document.getElementById(child);
   childElement.parentNode.removeChild(childElement);
-  disableSubmitButton();
+  disableSubmitButton(wrapper, button);
 }
 
-function disableSubmitButton() {
-  if ((assetWrapper.childElementCount === 0 ? true : false) === true) {
-    assetSubmitButton.setAttribute("disabled", "disabled");
+function disableSubmitButton(wrapper, button) {
+  if ((wrapper.childElementCount === 0 ? true : false) === true) {
+    button.setAttribute("disabled", "disabled");
   } else {
-    enableSubmitButton();
+    enableSubmitButton(button);
   }
 }
 
-function enableSubmitButton() {
-  assetSubmitButton.removeAttribute("disabled");
+function enableSubmitButton(button) {
+  button.removeAttribute("disabled");
 }
 
 function checkAssetExists(assetName) {

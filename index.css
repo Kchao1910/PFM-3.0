@@ -30,7 +30,7 @@ body {
   font-size: 18px;
 }
 
-#budget-name {
+#budget-name, #csv-name {
   justify-self: center;
   width: 10rem;
 }
@@ -43,6 +43,7 @@ button {
 .fa-times-circle {
   color: rgb(252, 106, 107);
   float: right;
+  font-size: 16px;
   margin-bottom: 8px;
 }
 
@@ -54,6 +55,16 @@ form {
   border: 1.5px solid black;
   border-radius: 8px;
   padding: 40px;
+}
+
+form input, input, .asset-name-label {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.asset-name-label {
+  font-weight: 600;
 }
 
 li {
@@ -84,7 +95,8 @@ section a:hover {
 .submit-button {
   border: 1px solid black;
   border-radius: 14px;
-  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
   padding: 4px 16px;
 }
 
@@ -98,9 +110,13 @@ ul {
 }
 
 form input {
-  width: 8rem;
+  width: 10rem;
   margin-left: auto;
   margin-right: auto;
+}
+
+p {
+  font-size: 16px;
 }
 
 .budget-leftover-green {
@@ -131,7 +147,7 @@ form input {
   }
 
   section {
-    margin: 4rem 0;
+    margin: 2rem 0;
   }
 
   section a {
@@ -165,7 +181,7 @@ form input {
   }
 
   section {
-    margin: 4rem 0;
+    margin: 2rem 0;
   }
 
   section a {
@@ -191,6 +207,10 @@ form input {
 
   #budget-instructions {
     grid-template-columns: 1fr;
+  }
+
+  form input {
+    width: 8rem;
   }
 }
 

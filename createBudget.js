@@ -1,7 +1,7 @@
 const budgetCategoryWrapper = document.querySelector("#budget-category-wrapper");
 const budgetSubmitButton = document.querySelector("#budget-submit-button");
 
-disableSubmitButton();
+disableSubmitButton(budgetCategoryWrapper, budgetSubmitButton);
 
 function addCategoryToBudget() {
   if (checkMaxCategoryNumbers() === true) {
@@ -14,8 +14,8 @@ function addCategoryToBudget() {
 
 function createNewBudgetElements() {
   const budgetForm = document.createElement("form");
-  const removeCategoryButtonWrapper = document.createElement("button");
-  const removeCategoryIcon = document.createElement("i");
+  const removeNodeButtonWrapper = document.createElement("button");
+  const removeNodeIcon = document.createElement("i");
   const categoryNameLabel = document.createElement("label");
   const budgetAmountLabel = document.createElement("label");
   const expenseAmountLabel = document.createElement("label");
@@ -30,12 +30,12 @@ function createNewBudgetElements() {
   budgetForm.setAttribute("class", "budget-form");
   budgetForm.setAttribute("id", categoryNameCounterResult);
 
-  removeCategoryButtonWrapper.setAttribute("class", "remove-element-wrapper");
-  removeCategoryButtonWrapper.addEventListener("click", function(event) { 
+  removeNodeButtonWrapper.setAttribute("class", "remove-element-wrapper");
+  removeNodeButtonWrapper.addEventListener("click", function(event) { 
     event.preventDefault();
-    removeCategory(categoryNameCounterResult); 
+    removeNode(categoryNameCounterResult, budgetCategoryWrapper, budgetSubmitButton); 
   });
-  removeCategoryIcon.setAttribute("class", "far fa-times-circle");
+  removeNodeIcon.setAttribute("class", "far fa-times-circle");
 
   categoryNameLabel.setAttribute("class", "category-name-label");
   categoryNameLabel.textContent = "Category Name";
@@ -55,10 +55,10 @@ function createNewBudgetElements() {
   expenseAmountInput.setAttribute("class", "expense-amount-input");
   expenseAmountInput.setAttribute("placeholder", "750");
 
-  let budgetElements = [budgetForm, removeCategoryButtonWrapper, removeCategoryIcon, categoryNameLabel, categoryNameInput, budgetAmountLabel, budgetAmountInput, expenseAmountLabel, expenseAmountInput];
+  let budgetElements = [budgetForm, removeNodeButtonWrapper, removeNodeIcon, categoryNameLabel, categoryNameInput, budgetAmountLabel, budgetAmountInput, expenseAmountLabel, expenseAmountInput];
   appendElementsToDom(budgetElements);
 
-  enableSubmitButton();
+  enableSubmitButton(budgetSubmitButton);
 }
 
 function appendElementsToDom(budgetElements) {
@@ -75,23 +75,23 @@ function checkMaxCategoryNumbers() {
 }
 
 function categoryNameCounter() {
-  return `category-${budgetCategoryWrapper.childElementCount}`;
+  return `category-${budgetCategoryWrapper.childElementCount + Math.random()}`;
 }
 
-function removeCategory(child) {
+function removeNode(child, wrapper, button) {
   const childElement = document.getElementById(child);
   childElement.parentNode.removeChild(childElement);
-  disableSubmitButton();
+  disableSubmitButton(wrapper, button);
 }
 
-function disableSubmitButton() {
-  if ((budgetCategoryWrapper.childElementCount === 0 ? true : false) === true) {
-    budgetSubmitButton.setAttribute("disabled", "disabled");
+function disableSubmitButton(wrapper, button) {
+  if ((wrapper.childElementCount === 0 ? true : false) === true) {
+    button.setAttribute("disabled", "disabled");
   } else {
-    enableSubmitButton();
+    enableSubmitButton(button);
   }
 }
 
-function enableSubmitButton() {
-  budgetSubmitButton.removeAttribute("disabled");
+function enableSubmitButton(button) {
+  button.removeAttribute("disabled");
 }

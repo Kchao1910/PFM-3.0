@@ -2,6 +2,8 @@ function getInputCollections() {
   const categoryNameCollection = document.getElementsByClassName("category-name-input");
   const budgetAmountCollection = document.getElementsByClassName("budget-amount-input");
   const expenseAmountCollection = document.getElementsByClassName("expense-amount-input");
+  const csvName = document.querySelector("#csv-name").value;
+  console.log(csvName);
 
   const categoryValidate= validate(categoryNameCollection);
   const budgetValidate = validate(budgetAmountCollection);
@@ -19,10 +21,14 @@ function getInputCollections() {
   const budgetSum = calculateSum(budgetAmountCollection);
   const expenseSum = calculateSum(expenseAmountCollection);
 
-  const leftover = calculateBudgetLeftover(budgetSum, expenseSum);
+  const leftover = calculateBudgetLeftover(budgetSum, expenseSum).toFixed(2);
   
   determineUnderBudget(leftover);
   createDonutChart(categoryNameValues, budgetAmountValues);
+
+  if (csvName !== "") {
+    createCsv(categoryNameValues, budgetAmountValues, expenseAmountValues, csvName);
+  }
 }
 
 function calculateSum(collection) {
@@ -142,4 +148,25 @@ function deleteChart(canvas, chartElement) {
     chartWrapper.appendChild(canvasElement);
     return false;
   }
+}
+
+function createCsv(category, budget, expense, csvName) {
+  let rows = [];
+  for (let element in category) {
+    rows[element] = [category[element], budget[element], expense[element]];
+  }
+
+  let csv = 'Category Name, Budget Amount, Expense Amount\n';
+  rows.forEach(function(rowList) {
+    csv += rowList.join(',');
+    csv += "\n";
+  });
+
+  const link = document.createElement('a');
+  link.href = 'data:text/csv;charset=utf-8,' + encodeURI(csv);
+  link.target = '_blank';
+  link.download = csvName + ".csv";
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
 }

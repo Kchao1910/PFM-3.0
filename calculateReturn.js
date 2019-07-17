@@ -41,7 +41,3 @@ function displayReturn(averageReturn) {
 
   assetSummary.innerHTML = `Average Return Rate: <span class="budget-leftover-green">%${(100 * averageReturn).toFixed(2)}</span>`;
 }
-
-function createAssetChart() {
-
-}

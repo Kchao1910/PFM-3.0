@@ -22,8 +22,8 @@
     <h1>Budgeting</h1>
 
     <section id="budget-instructions">
-      <p>Choose a name for your budget</p>
-      <input type="text" name="budget-name" id="budget-name" placeholder="Rennovations"> 
+      <p>Enter in the name you want to call your file(don't include .csv, leave blank if not wanted).</p>
+      <input type="text" name="csv-file-name" id="csv-name" placeholder="My Budget">
       <p>Click the plus button to add a category to your budget.</p>
       <button class="budget-plus-button" onclick="addCategoryToBudget()"><i class="fas fa-plus-circle"></i></button>
     </section>
@@ -35,11 +35,6 @@
     <section id="budget-summary"></section>
 
     <section id="chart-wrapper"><canvas id="budget-allocation-chart"></canvas></section>
-
-    <span>Enter in the name you want to call your file(don't include .csv)</span>
-    <input type="text">
-    <button class="submit-button">Submit</button>
-
   </main>
   
   <footer></footer>

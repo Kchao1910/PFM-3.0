@@ -22,7 +22,16 @@ body {
 
 .budget-plus-button {
   color: lightgreen;
-  font-size: 18px;
+  font-size: 24px;
+  height: 48px;
+  width: 48px;
+  margin: 0 auto;
+}
+
+.remove-element-wrapper {
+  width: 48px;
+  height: 48px;
+  margin-left: auto;
 }
 
 .instruction-wrapper input {
@@ -38,7 +47,7 @@ button {
 .fa-times-circle {
   color: rgb(252, 106, 107);
   float: right;
-  font-size: 16px;
+  font-size: 24px;
   margin-bottom: 8px;
 }
 

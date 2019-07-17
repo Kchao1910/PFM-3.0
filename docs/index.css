@@ -187,6 +187,11 @@ p {
   .logo {
     text-align: center;
   }
+
+  .tool-option-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+  }
 }
 
 @media screen and (max-width: 579px) {

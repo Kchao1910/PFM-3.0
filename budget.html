@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Create budgets you can track">
   <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="index.css">
   <title>SaveYourMoney</title>
@@ -21,14 +22,14 @@
   <main>
     <h1>Budgeting</h1>
 
-    <section id="budget-instructions">
+    <section id="budget-instructions" class="instruction-wrapper">
       <p>Enter in the name you want to call your file(don't include .csv, leave blank if not wanted).</p>
       <input type="text" name="csv-file-name" id="csv-name" placeholder="My Budget">
       <p>Click the plus button to add a category to your budget.</p>
-      <button class="budget-plus-button" onclick="addCategoryToBudget()"><i class="fas fa-plus-circle"></i></button>
+      <button class="budget-plus-button" onclick="addCategoryToBudget()"><svg class="plus-circle-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm144 276c0 6.6-5.4 12-12 12h-92v92c0 6.6-5.4 12-12 12h-56c-6.6 0-12-5.4-12-12v-92h-92c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h92v-92c0-6.6 5.4-12 12-12h56c6.6 0 12 5.4 12 12v92h92c6.6 0 12 5.4 12 12v56z"/></svg></button>
     </section>
 
-    <section id="budget-category-wrapper"></section>
+    <section id="budget-category-wrapper" class="tool-wrapper"></section>
 
     <button id="budget-submit-button" class="submit-button" onclick="getInputCollections()">Submit</button>
 
@@ -38,7 +39,7 @@
   </main>
   
   <footer></footer>
-  <script src="node_modules/chart.js/dist/Chart.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
   <script src="calculateBudget.js"></script>
   <script src="createBudget.js"></script>
   <script src="https://kit.fontawesome.com/e3488cdef9.js"></script> 

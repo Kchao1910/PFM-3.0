@@ -3,7 +3,6 @@ function getInputCollections() {
   const budgetAmountCollection = document.getElementsByClassName("budget-amount-input");
   const expenseAmountCollection = document.getElementsByClassName("expense-amount-input");
   const csvName = document.querySelector("#csv-name").value;
-  console.log(csvName);
 
   const categoryValidate= validate(categoryNameCollection);
   const budgetValidate = validate(budgetAmountCollection);
@@ -14,9 +13,6 @@ function getInputCollections() {
   const categoryNameValues = getInputValues(categoryNameCollection);
   const budgetAmountValues = getInputValues(budgetAmountCollection);
   const expenseAmountValues = getInputValues(expenseAmountCollection);
-
-  console.log(categoryNameValues);
-  console.log(budgetAmountValues);
 
   const budgetSum = calculateSum(budgetAmountCollection);
   const expenseSum = calculateSum(expenseAmountCollection);
@@ -131,7 +127,9 @@ function createDonutChart(categoryNameValues, budgetAmountValues) {
         display: true,
         fontSize: 18,
         text: "Budget Allocation"
-      }
+      },
+      maintainAspectRatio: false,
+      responsive: true,
     }
   });
 }

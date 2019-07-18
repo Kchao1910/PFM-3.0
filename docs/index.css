@@ -21,17 +21,37 @@ body {
 }
 
 .budget-plus-button {
-  color: lightgreen;
-  font-size: 24px;
   height: 48px;
   width: 48px;
   margin: 0 auto;
+}
+
+.plus-circle-svg {
+  fill: lightgreen;
+  height: 30px;
+  width: 30px;
+}
+
+.plus-circle-svg:hover {
+  fill: rgb(0, 211, 0);
 }
 
 .remove-element-wrapper {
   width: 48px;
   height: 48px;
   margin-left: auto;
+}
+
+.times-circle-svg {
+  fill: rgb(252, 106, 107);
+  float: right;
+  height: 30px;
+  margin-bottom: 8px;
+  width: 30px;
+}
+
+.times-circle-svg:hover {
+  fill: red;
 }
 
 .instruction-wrapper input {

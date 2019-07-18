@@ -10,21 +10,51 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
-#budget-category-wrapper, #asset-wrapper {
+.tool-wrapper {
   display: grid;
 }
 
-#budget-instructions, #asset-instructions {
+
+.instruction-wrapper {
   align-items: center;
   display: grid;
 }
 
 .budget-plus-button {
-  color: lightgreen;
-  font-size: 18px;
+  height: 48px;
+  width: 48px;
+  margin: 0 auto;
 }
 
-#budget-name, #csv-name {
+.plus-circle-svg {
+  fill: lightgreen;
+  height: 30px;
+  width: 30px;
+}
+
+.plus-circle-svg:hover {
+  fill: rgb(0, 211, 0);
+}
+
+.remove-element-wrapper {
+  width: 48px;
+  height: 48px;
+  margin-left: auto;
+}
+
+.times-circle-svg {
+  fill: rgb(252, 106, 107);
+  float: right;
+  height: 30px;
+  margin-bottom: 8px;
+  width: 30px;
+}
+
+.times-circle-svg:hover {
+  fill: red;
+}
+
+.instruction-wrapper input {
   justify-self: center;
   width: 10rem;
 }
@@ -37,7 +67,7 @@ button {
 .fa-times-circle {
   color: rgb(252, 106, 107);
   float: right;
-  font-size: 16px;
+  font-size: 24px;
   margin-bottom: 8px;
 }
 
@@ -70,10 +100,6 @@ li {
 
 .logo {
   font-size: 28px;
-}
-
-input {
-  font-size: 16px;
 }
 
 nav ul li a {
@@ -191,14 +217,14 @@ p {
     text-align: center;
   }
 
-  .tool-wrapper {
+  .tool-option-wrapper {
     display: flex;
     justify-content: space-evenly;
   }
 }
 
 @media screen and (max-width: 579px) {
-  #budget-category-wrapper, #asset-wrapper {
+  .tool-wrapper {
     grid-template-columns: 1fr;
   }
 
@@ -212,19 +238,19 @@ p {
 }
 
 @media screen and (min-width: 579px) and (max-width: 845px) {
-  #budget-category-wrapper, #asset-wrapper {
+  .tool-wrapper {
     grid-template-columns: 1fr 1fr;
   }
 }
 
 @media screen and (min-width: 845px) and (max-width: 1120px) {
-  #budget-category-wrapper, #asset-wrapper {
+  .tool-wrapper {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
 @media screen and (min-width: 1120px) {
-  #budget-category-wrapper, #asset-wrapper {
+  .tool-wrapper {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }

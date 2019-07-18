@@ -44,6 +44,8 @@ function addAsset(assetName) {
   assetNameLabel.textContent = assetName;
   assetWeightLabel.textContent = "Asset Weight";
   assetReturnRateLabel.textContent = "Asset Return Rate";
+  assetWeightInput.setAttribute("placeholder", "30");
+  assetReturnRateInput.setAttribute("placeholder", "10");
 
   assetForm.appendChild(removeAssetButtonWrapper);
   removeAssetButtonWrapper.appendChild(removeAssetIcon);

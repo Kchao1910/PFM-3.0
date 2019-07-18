@@ -9,7 +9,7 @@ function getAssetInput() {
   const assetWeightValues = getInputValues(assetWeightCollection);
 
 
-  createDonutChart(assetNameValues, assetWeightValues);
+  createDonutChart(assetNameValues, assetWeightValues, "Asset Return", "Asset Return Allocation");
 }
 
 function getAssetNames(collection) {

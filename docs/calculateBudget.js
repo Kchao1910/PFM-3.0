@@ -20,7 +20,7 @@ function getInputCollections() {
   const leftover = calculateBudgetLeftover(budgetSum, expenseSum).toFixed(2);
   
   determineUnderBudget(leftover);
-  createDonutChart(categoryNameValues, budgetAmountValues);
+  createDonutChart(categoryNameValues, budgetAmountValues, "Budget Amount", "Budget Allocation");
 
   if (csvName !== "") {
     createCsv(categoryNameValues, budgetAmountValues, expenseAmountValues, csvName);
@@ -93,7 +93,7 @@ function displayBudgetOnDom(leftover, status) {
   }
 }
 
-function createDonutChart(categoryNameValues, budgetAmountValues) {
+function createDonutChart(labelValues, amountValues, chartLabel, chartName) {
   let chartElement = document.getElementsByTagName("canvas");
   let canvas = chartElement[0];
   if (deleteChart(canvas, chartElement) === false) {
@@ -104,10 +104,10 @@ function createDonutChart(categoryNameValues, budgetAmountValues) {
   let myChart = new Chart(chartElement, {
     type: "doughnut",
     data: {
-      labels: categoryNameValues,
+      labels: labelValues,
       datasets: [{
-        label: "Budget Amount",
-        data: budgetAmountValues,
+        label: chartLabel,
+        data: amountValues,
         backgroundColor: [
           "#FF5A51",
           "#FF7C60",
@@ -126,10 +126,8 @@ function createDonutChart(categoryNameValues, budgetAmountValues) {
       title: {
         display: true,
         fontSize: 18,
-        text: "Budget Allocation"
+        text: chartName
       },
-      maintainAspectRatio: false,
-      responsive: true,
     }
   });
 }

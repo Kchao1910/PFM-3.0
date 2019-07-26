@@ -28,6 +28,9 @@ function addAsset(assetName) {
   assetNameLabel.setAttribute("class", "asset-name-label");
   assetWeightInput.setAttribute("class", "asset-weight-input");
   assetReturnRateInput.setAttribute("class", "asset-return-input");
+  
+  assetWeightInput.setAttribute("placeholder", "30");
+  assetReturnRateInput.setAttribute("placeholder", "10");
 
   assetWeightInput.setAttribute("type", "number");
   assetReturnRateInput.setAttribute("type", "number");

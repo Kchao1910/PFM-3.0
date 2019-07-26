@@ -1,14 +1,14 @@
 function getInputCollections() {
-  const categoryNameCollection = document.getElementsByClassName("category-name-input");
-  const budgetAmountCollection = document.getElementsByClassName("budget-amount-input");
-  const expenseAmountCollection = document.getElementsByClassName("expense-amount-input");
+  const categoryNameCollection = document.querySelectorAll(".category-name-input");
+  const budgetAmountCollection = document.querySelectorAll(".budget-amount-input");
+  const expenseAmountCollection = document.querySelectorAll(".expense-amount-input");
   const csvName = document.querySelector("#csv-name").value;
 
   const categoryValidate = validate(categoryNameCollection);
   const budgetValidate = validate(budgetAmountCollection);
   const expenseValidate = validate(expenseAmountCollection);
 
-  if (categoryValidate === false || budgetValidate === false || expenseValidate) return;
+  if (categoryValidate === false || budgetValidate === false || expenseValidate === false) return;
 
   const categoryNameValues = getInputValues(categoryNameCollection);
   const budgetAmountValues = getInputValues(budgetAmountCollection);

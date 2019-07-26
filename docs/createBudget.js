@@ -58,8 +58,6 @@ function createNewBudgetElements() {
   expenseAmountInput.setAttribute("class", "expense-amount-input");
   expenseAmountInput.setAttribute("placeholder", "750");
 
-  budgetForm.appendChild();
-
   let budgetElements = [budgetDocFragment, budgetForm, removeNodeButtonWrapper, removeNodeIcon, categoryNameLabel, categoryNameInput, budgetAmountLabel, budgetAmountInput, expenseAmountLabel, expenseAmountInput];
   appendElementsToDom(budgetElements);
 

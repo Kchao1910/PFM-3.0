@@ -4,7 +4,7 @@ function getInputCollections() {
   const expenseAmountCollection = document.getElementsByClassName("expense-amount-input");
   const csvName = document.querySelector("#csv-name").value;
 
-  const categoryValidate= validate(categoryNameCollection);
+  const categoryValidate = validate(categoryNameCollection);
   const budgetValidate = validate(budgetAmountCollection);
   const expenseValidate = validate(expenseAmountCollection);
 
@@ -39,7 +39,7 @@ function calculateSum(collection) {
 
 function validate(collection) {
   for (let element of collection) {
-    if (element.value.search("<script>") === -1) {
+    if (element.value.search("script") === -1) {
       return;
     }
     else {

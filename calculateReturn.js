@@ -3,11 +3,6 @@ function getAssetInput() {
   const assetWeightCollection = document.querySelectorAll(".asset-weight-input");
   const assetReturnCollection = document.querySelectorAll(".asset-return-input");
 
-  const assetWeightValidate = validate(assetWeightCollection);
-  const assetReturnValidate = validate(assetReturnCollection);
-
-  if (assetWeightValidate === false || assetReturnValidate === false) return;
-
   displayReturn(calculateAverageReturn(assetWeightCollection, assetReturnCollection));
 
   const assetNameValues = getAssetNames(assetNameCollection);

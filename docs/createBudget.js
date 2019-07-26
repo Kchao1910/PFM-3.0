@@ -13,6 +13,7 @@ function addCategoryToBudget() {
 }
 
 function createNewBudgetElements() {
+  const budgetDocFragment = document.createDocumentFragment();
   const budgetForm = document.createElement("form");
   const removeNodeButtonWrapper = document.createElement("button");
   const removeNodeIcon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
@@ -57,19 +58,23 @@ function createNewBudgetElements() {
   expenseAmountInput.setAttribute("class", "expense-amount-input");
   expenseAmountInput.setAttribute("placeholder", "750");
 
-  let budgetElements = [budgetForm, removeNodeButtonWrapper, removeNodeIcon, categoryNameLabel, categoryNameInput, budgetAmountLabel, budgetAmountInput, expenseAmountLabel, expenseAmountInput];
+  budgetForm.appendChild();
+
+  let budgetElements = [budgetDocFragment, budgetForm, removeNodeButtonWrapper, removeNodeIcon, categoryNameLabel, categoryNameInput, budgetAmountLabel, budgetAmountInput, expenseAmountLabel, expenseAmountInput];
   appendElementsToDom(budgetElements);
 
   enableSubmitButton(budgetSubmitButton);
 }
 
 function appendElementsToDom(budgetElements) {
-  budgetCategoryWrapper.appendChild(budgetElements[0]);
-  budgetElements[0].appendChild(budgetElements[1]);
+  // look at line 64 for budgetElements array to see elements
   budgetElements[1].appendChild(budgetElements[2]);
-  for (let i = 3; i < 9; i++) {
-    budgetElements[0].appendChild(budgetElements[i]);
+  budgetElements[2].appendChild(budgetElements[3]);
+  for (let i = 4; i < budgetElements.length; i++) {
+    budgetElements[1].appendChild(budgetElements[i]);
   }
+
+  budgetCategoryWrapper.appendChild(budgetElements[0]);
 }
 
 function checkMaxCategoryNumbers() {

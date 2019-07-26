@@ -72,6 +72,7 @@ function appendElementsToDom(budgetElements) {
     budgetElements[1].appendChild(budgetElements[i]);
   }
 
+  budgetElements[0].appendChild(budgetElements[1]);
   budgetCategoryWrapper.appendChild(budgetElements[0]);
 }
 

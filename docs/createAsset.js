@@ -3,6 +3,9 @@ const assetSubmitButton = document.querySelector("#asset-submit-button");
 
 disableSubmitButton(assetWrapper, assetSubmitButton);
 
+/*
+  This function creates a form 
+*/
 function addAsset(assetName) {
   if (checkAssetExists(assetName) === true) {
     alert("Asset has already been added to portfolio!"); 
@@ -63,16 +66,28 @@ function addAsset(assetName) {
   enableSubmitButton(assetSubmitButton);
 }
 
+
+/*
+  This function creates the id of a form element
+*/
 function assetNameCounter(assetName) {
   return `asset-${assetName}`;
 }
 
+/*
+  This function removes a form element
+*/
 function removeNode(child, wrapper, button) {
   const childElement = document.getElementById(child);
   childElement.parentNode.removeChild(childElement);
   disableSubmitButton(wrapper, button);
 }
 
+
+/*
+  This function disables the submit button
+  if the user hasn't chosen an asset
+*/  
 function disableSubmitButton(wrapper, button) {
   if ((wrapper.childElementCount === 0 ? true : false) === true) {
     button.setAttribute("disabled", "disabled");
@@ -81,10 +96,18 @@ function disableSubmitButton(wrapper, button) {
   }
 }
 
+
+/*
+  This function enables the submit button 
+  once the user chooses an asset
+*/
 function enableSubmitButton(button) {
   button.removeAttribute("disabled");
 }
 
+/*
+  This function checks if a asset has been chosen already
+*/
 function checkAssetExists(assetName) {
   return document.querySelector(`#asset-${assetName}`) !== null ? true : false;
 }

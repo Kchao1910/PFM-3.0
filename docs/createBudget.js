@@ -3,6 +3,9 @@ const budgetSubmitButton = document.querySelector("#budget-submit-button");
 
 disableSubmitButton(budgetCategoryWrapper, budgetSubmitButton);
 
+/*
+  This function houses two other functions (checking maximum categories and creating forms)
+*/
 function addCategoryToBudget() {
   if (checkMaxCategoryNumbers() === true) {
     alert("Maximum number of categories(12) reached!");
@@ -12,6 +15,10 @@ function addCategoryToBudget() {
   createNewBudgetElements();
 }
 
+
+/*
+  This function creates a form
+*/
 function createNewBudgetElements() {
   const budgetDocFragment = document.createDocumentFragment();
   const budgetForm = document.createElement("form");
@@ -64,6 +71,10 @@ function createNewBudgetElements() {
   enableSubmitButton(budgetSubmitButton);
 }
 
+
+/*
+  This function appends a form to the DOM
+*/
 function appendElementsToDom(budgetElements) {
   // look at line 64 for budgetElements array to see elements
   budgetElements[1].appendChild(budgetElements[2]);
@@ -76,20 +87,33 @@ function appendElementsToDom(budgetElements) {
   budgetCategoryWrapper.appendChild(budgetElements[0]);
 }
 
+
+/*
+  This function checks to see whether the user has reached the maximum allowed categories
+*/
 function checkMaxCategoryNumbers() {
   return budgetCategoryWrapper.childElementCount === 12 ? true : false;
 }
 
+/*
+  This function determines the id of an element
+*/
 function categoryNameCounter() {
   return `category-${budgetCategoryWrapper.childElementCount + Math.random()}`;
 }
 
+/*
+  This function removes a form 
+*/
 function removeNode(child, wrapper, button) {
   const childElement = document.getElementById(child);
   childElement.parentNode.removeChild(childElement);
   disableSubmitButton(wrapper, button);
 }
 
+/*
+  This function disables the submit button if no form exists
+*/
 function disableSubmitButton(wrapper, button) {
   if ((wrapper.childElementCount === 0 ? true : false) === true) {
     button.setAttribute("disabled", "disabled");
@@ -98,6 +122,10 @@ function disableSubmitButton(wrapper, button) {
   }
 }
 
+
+/*
+  This function enables the submit button if at least one form exists
+*/
 function enableSubmitButton(button) {
   button.removeAttribute("disabled");
 }

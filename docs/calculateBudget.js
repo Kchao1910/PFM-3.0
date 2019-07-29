@@ -1,3 +1,7 @@
+/*
+  This function serves to house other functions including input
+  retrieval, validation, sum calculation, and output display
+*/
 function getInputCollections() {
   const categoryNameCollection = document.querySelectorAll(".category-name-input");
   const budgetAmountCollection = document.querySelectorAll(".budget-amount-input");
@@ -27,6 +31,10 @@ function getInputCollections() {
   }
 }
 
+
+/*
+  This function takes a collection of numbers and adds them all up
+*/
 function calculateSum(collection) {
   let sum = 0;
 
@@ -37,6 +45,10 @@ function calculateSum(collection) {
   return sum.toFixed(2);
 }
 
+
+/*
+  This function determines whether input contains the string "script"
+*/
 function validate(collection) {
   for (let element of collection) {
     if (element.value.search("script") === -1) {
@@ -49,6 +61,11 @@ function validate(collection) {
   }
 }
 
+
+/*
+  This function takes in a collection of input elements 
+  and retrieves the value 
+*/
 function getInputValues(collection) {
   let array = [];
 
@@ -59,10 +76,20 @@ function getInputValues(collection) {
   return array;
 }
 
+
+/*
+  This function calculates how much budget is leftover
+  after subtracting expenses from the budget
+*/
 function calculateBudgetLeftover(budgetSum, expenseSum) {
   return budgetSum - expenseSum;
 }
 
+
+/*
+  This function takes in the remaining amount left in the budget
+  and determines if the user is under budget or over budget
+*/
 function determineUnderBudget(leftover) {
   let status = "";
 
@@ -76,6 +103,10 @@ function determineUnderBudget(leftover) {
   displayBudgetOnDom(leftover, status);
 }
 
+
+/*
+  This function displays how much budget is leftover and their budget status
+*/
 function displayBudgetOnDom(leftover, status) {
   // either create 
   const budgetSummary = document.getElementById("budget-summary");
@@ -93,6 +124,10 @@ function displayBudgetOnDom(leftover, status) {
   }
 }
 
+
+/*
+  This function creates a donut chart to visualize the budget allocation
+*/
 function createDonutChart(labelValues, amountValues, chartLabel, chartName) {
   let chartElement = document.getElementsByTagName("canvas");
   let canvas = chartElement[0];
@@ -132,6 +167,10 @@ function createDonutChart(labelValues, amountValues, chartLabel, chartName) {
   });
 }
 
+
+/*
+  This function removes an existing chart
+*/
 function deleteChart(canvas, chartElement) {
   const chartWrapper = document.getElementById("chart-wrapper");
 
@@ -146,6 +185,10 @@ function deleteChart(canvas, chartElement) {
   }
 }
 
+/*
+  This function creates a CSV file containing data about
+  category names, budget amounts, and expenses
+*/
 function createCsv(category, budget, expense, csvName) {
   let rows = [];
   for (let element in category) {

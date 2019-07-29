@@ -1,3 +1,7 @@
+/*
+  This function serves to house other functions such as
+  input retrieval, displaying output, and data visualization
+*/
 function getAssetInput() {
   const assetNameCollection = document.querySelectorAll(".asset-name-label");
   const assetWeightCollection = document.querySelectorAll(".asset-weight-input");
@@ -12,6 +16,10 @@ function getAssetInput() {
   createDonutChart(assetNameValues, assetWeightValues, "Asset Return", "Asset Return Allocation");
 }
 
+/*
+  This function takes in a collection of input elements and
+  retrieves their values
+*/
 function getAssetNames(collection) {
   let array = [];
   for (let element of collection) {
@@ -21,6 +29,10 @@ function getAssetNames(collection) {
   return array;
 }
 
+
+/*
+  This function calculates a weighted return rate of all assets
+*/
 function calculateAverageReturn(assetWeightCollection, assetReturnCollection) {
   let averageReturn = 0;
 
@@ -36,6 +48,10 @@ function calculateAverageReturn(assetWeightCollection, assetReturnCollection) {
   return averageReturn;
 }
 
+
+/*
+ This function displays the weighted return rate
+*/
 function displayReturn(averageReturn) {
   const assetSummary = document.querySelector("#asset-summary");
 
